@@ -1,0 +1,29 @@
+# Login and Registration
+
+This is a simple login and registration form; it's meant to work with the included loginandreg database, but can be re-utilized
+Function took precedence over styling (clearly), but styling will be revisited once function is perfected
+There are still bugs being worked out (Page will flash a success message after refreshing, login page needs a different redirect route, etc.)
+
+## Purpose
+
+Familiarization with data validation
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install flask, PyMySQL, and flask-bcrypt.
+
+```bash
+pip install flask PyMySQL flask-bcrypt
+```
+## File functions
+Static - CSS styling
+Templates- HTML for individual pages
+Server files - python server file and connector to MySQL
+
+## Current intended featured
+Hashed passwords
+User information saved in session (broken as of 4/23)
+Success page should only be visible to logged in users
+
+## In progress Additions
+User Profile page - allows user to edit their information or delete their "account"

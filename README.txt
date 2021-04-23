@@ -1,3 +1,7 @@
+STILL IN PROGRESS
+
+Purpose: Familiarization with data validation
+
 This is a simple login and registration form; is meant to work with the loginandreg database, but can be re-utilized
 Function took precedence over styling (clearly)
 There are still bugs being worked out (Page will flash a success message after refreshing, login page needs a different redirect route, etc.)

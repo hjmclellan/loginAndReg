@@ -55,13 +55,26 @@ def login_user():
         if bcrypt.check_password_hash(result[0]['password'], request.form['password']):
             session['user_id'] = result[0]['id']
             return redirect('/success')
-    else:
-        flash("You could not be logged in")
-    return redirect('/')
+    flash("You could not be logged in")
+    return redirect("/")
 
 @app.route('/success')
 def success():
-    return render_template("success.html")
+    if 'user_id' not in session:
+        flash("Must be logged in to access this page")
+        return redirect ('/')
+    query = "SELECT * FROM users WHERE id = %(id)s;"
+    data ={
+        'id': session['user_id']
+    }
+    mysql = connectToMySQL('loginandreg')
+    user=mysql.query_db(query, data)
+    return render_template("success.html", one_user=user[0])
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
 
 
 
